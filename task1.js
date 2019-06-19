@@ -110,28 +110,31 @@ class Parent extends Person {
 		this.setJobPosition(jobPosition)
 	}
 	setJobPosition(jobPosition) {
-		this.jobPosition = jobPosition
+		this.jobPosition = jobPosition;
 	}
 }
 
 class Student extends Person {
 	constructor(name, contact, isActive, dateOfBirth, studentGroup, parent = []) {
 		super(name, contact, isActive, dateOfBirth, studentGroup, parent);
+		this.setStudentGroup(studentGroup);
 	}
 	setStudentGroup(studentGroup) {
-		studentGroup = new studentGroup();
+		studentGroup = new StudentGroup();
 	}
 	addParent(parent) {
 		this.parent.push(new parent)
 	}
 }
-
+let studentGroup = new Student();
+let parent = new Student();
 
 class Teacher extends Person {
 	constructor(name, contact, isActive, dateOfBirth, subjects = [], studentGroup = [], salary, position) {
 		super(name, contact, isActive, dateOfBirth);
 		this.setSalary(salary);
 		this.setPosition(position);
+		this.addSubject(subjects);
 	}
 	setSalary(salary) {
 		this.salary = salary;
@@ -139,8 +142,8 @@ class Teacher extends Person {
 	setPosition(position) {
 		this.position = new position;
 	}
-	addSubject(subject) {
-		this.subject.push(new subject);
+	addSubject(subjects) {
+		this.subjects.push(new subjects);
 	}
 	addStudentGroup(studentGroup) {
 		this.studentGroup.push(new studentGroup(studentGroup));
