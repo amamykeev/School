@@ -135,6 +135,7 @@ class Teacher extends Person {
 		this.setSalary(salary);
 		this.setPosition(position);
 		this.addSubject(subjects);
+		this.addStudentGroup(studentGroup);
 	}
 	setSalary(salary) {
 		this.salary = salary;
